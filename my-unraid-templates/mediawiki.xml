@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>mediawiki</Name>
+  <Repository>mediawiki:1.45.1-fpm
+</Repository>
+  <Registry>https://hub.docker.com/_/mediawiki</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/wikimedia/mediawiki-docker</Support>
+  <Project>https://www.mediawiki.org</Project>
+  <Overview>MediaWiki is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.</Overview>
+  <Category>Cloud: Productivity: Tools:Utilities Network:Web</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/d8sychain/unraid-ca-templates/master/templates/mediawiki.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/d8sychain/unraid-ca-templates/master/images/mediawiki.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1707258638</DateInstalled>
+  <DonateText>Donations</DonateText>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI" Target="80" Default="80" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">9090</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="File Uploads" Target="/assets" Default="" Mode="rw" Description="OPTIONAL: Set a host path to use an alternate location for file uploads. Default container path: /config/www/mediawiki/images&#13;&#10;Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/data/mediawiki/assets</Config>
+  <Config Name="Allow Mediawiki Upgrades" Target="UPGRADE_MEDIAWIKI" Default="disable" Mode="" Description="Allow MediaWiki to automatically be upgraded with new docker images.&#13;&#10;Set 'enable' to allow upgrades." Type="Variable" Display="always" Required="false" Mask="false">disable</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/cache/appdata/mediawiki" Mode="rw" Description="" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/cache/appdata/mediawiki</Config>
+</Container>
